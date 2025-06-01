@@ -19,7 +19,7 @@ with pdfplumber.open(pdf_path) as pdf:
 # 複数ページの表を結合
 if tables:
     final_df = pd.concat(tables, ignore_index=True)
-    final_df.to_csv(csv_path, index=False)
+    final_df.to_csv(csv_path, index=False, sep="\t")
     print(f"✅ CSV書き出し完了: {csv_path}")
 else:
     print("⚠️ 表が見つかりませんでした。")
